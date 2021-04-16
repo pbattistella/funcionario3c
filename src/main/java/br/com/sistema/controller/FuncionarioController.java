@@ -14,8 +14,11 @@ public class FuncionarioController {
 
     @GetMapping("/funcionario/list")
     public String list(Model model){
+        boolean erro = true;
         model.addAttribute("funcionarios", funcionarioService.findAll());
-        System.out.println(funcionarioService.findAll());
+        model.addAttribute("erro",erro);
         return "funcionario/list";
     }
+
+
 }

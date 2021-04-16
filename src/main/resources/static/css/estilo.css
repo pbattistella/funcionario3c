@@ -1,0 +1,39 @@
+.container-principal{
+    margin-top: 24px;
+}
+
+.card{
+    margin-bottom: 16px;
+}
+
+footer{
+    color: #df167b;
+    background-color: #fad1de;
+    text-align: center;
+    padding: 32px;
+}
+
+ul{
+    margin-bottom: 0;
+}
+
+li{
+    list-style-type: none;
+}
+
+.container-header-funcionario{
+    margin-top: 24px;
+    margin-bottom: 24px;
+    padding: 32px;
+    color: #df167b;
+    background-color: #fad1de;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.container-funcionario{
+    border: 1px solid #df167b;
+    border-radius: 15px;
+    padding: 16px;
+
+}
