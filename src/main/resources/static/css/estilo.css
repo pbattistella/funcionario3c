@@ -35,5 +35,21 @@ li{
     border: 1px solid #df167b;
     border-radius: 15px;
     padding: 16px;
+}
 
+.td-controle{
+    width: 60px;
+}
+
+.container-btn-novo{
+    width: 100%;
+    text-align: right;
+    margin-bottom: 8px;
+}
+
+.container-form-funcionario{
+    border: 1px solid #df167b;
+    border-radius: 15px;
+    padding: 16px;
+    width: 60%;
 }

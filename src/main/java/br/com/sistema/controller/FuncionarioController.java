@@ -1,5 +1,6 @@
 package br.com.sistema.controller;
 
+import br.com.sistema.model.Funcionario;
 import br.com.sistema.service.FuncionarioServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,10 +15,14 @@ public class FuncionarioController {
 
     @GetMapping("/funcionario/list")
     public String list(Model model){
-        boolean erro = true;
         model.addAttribute("funcionarios", funcionarioService.findAll());
-        model.addAttribute("erro",erro);
         return "funcionario/list";
+    }
+
+    @GetMapping("/funcionario/add")
+    public String add(Model model){
+        model.addAttribute("funcionario", new Funcionario());
+        return "funcionario/add";
     }
 
 
