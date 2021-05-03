@@ -53,3 +53,8 @@ li{
     padding: 16px;
     width: 60%;
 }
+
+.btn-form{
+    width: 100%;
+    margin-bottom: 8px;
+}
