@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -29,12 +30,14 @@ public class FuncionarioController {
     @PostMapping("/funcionario/save")
     public String save(Funcionario funcionario, Model model){
 
-//        if (funcionarioService.findByEmail(funcionario.getEmail()) != null) {
-//            model.addAttribute("funcionario", funcionario);
-//            model.addAttribute("erro", true);
-//            model.addAttribute("erroMsg", "O e-mail já foi cadastrado!");
-//            return "funcionario/add";
-//        }
+        String msgErro = funcionarioService.validarFuncionario(funcionario);
+        if (msgErro != null) {
+            model.addAttribute("funcionario", funcionario);
+            model.addAttribute("erro", true);
+            model.addAttribute("erroMsg", msgErro);
+            if(funcionario.getId() == null) return "funcionario/add";
+            else return "funcionario/edit";
+        }
 
         if (funcionarioService.save(funcionario)){
             return "redirect:/funcionario/list";
@@ -42,6 +45,12 @@ public class FuncionarioController {
             model.addAttribute("funcionario", funcionario);
             return "funcionario/add";
         }
+    }
+
+    @GetMapping("/funcionario/edit/{id}")
+    public String edit(@PathVariable long id, Model model){
+        model.addAttribute("funcionario", funcionarioService.findById(id));
+        return "funcionario/edit";
 
     }
 

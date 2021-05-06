@@ -10,7 +10,6 @@
     <link rel="stylesheet" th:href="@{/bootstrap-5.0.0/css/bootstrap.min.css}">
     <link rel="stylesheet" th:href="@{/fontawesome-5.15.3/css/all.css}">
     <link rel="stylesheet" th:href="@{/css/estilo.css}">
-
 </head>
 <body>
     <!--NAV-->
@@ -48,28 +47,28 @@
         <div class="form-floating mb-3">
           <input type="number" class="form-control" 
             id="floatingInputId" placeholder="Código"
-            disabled th:field="*{id}">
+            th:field="${funcionario.id}" readonly>
           <label for="floatingInputId">Código</label>
         </div>
 
         <div class="form-floating mb-3">
           <input type="text" class="form-control" 
             id="floatingInputNome" placeholder="Nome"
-            th:field="*{nome}" required>
+            th:field="${funcionario.nome}" required>
           <label for="floatingInputNome">Nome</label>
         </div>
 
         <div class="form-floating mb-3">
           <input type="email" class="form-control" 
             id="floatingInputEmail" placeholder="E-mail"
-            th:field="*{email}" required>
+            th:field="${funcionario.email}" required>
           <label for="floatingInputEmail">E-mal</label>
         </div>
 
         <div class="form-floating mb-3">
           <input type="text" class="form-control"
             id="floatingInputTelefone" placeholder="Telefone"
-            th:field="*{telefone}" required>
+            th:field="${funcionario.telefone}" required>
           <label for="floatingInputTelefone">Telefone</label>
         </div>
 
@@ -87,11 +86,7 @@
                   </button>
               </div>
           </div>
-
-
       </form>
-
-
     </div>
 
     

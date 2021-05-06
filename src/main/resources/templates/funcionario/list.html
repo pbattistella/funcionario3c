@@ -63,7 +63,7 @@
             <td th:text="${funcionario.email}"></td>
             <td th:text="${funcionario.telefone}"></td>
             <td class="td-controle">
-              <a th:href="@{/funcionario/edit}" class="btn btn-outline-dark">
+              <a th:href="@{'/funcionario/edit/' + ${funcionario.id}}" class="btn btn-outline-dark">
                 <i class="far fa-edit"></i>
               </a>
             </td>
