@@ -29,12 +29,12 @@ public class FuncionarioController {
     @PostMapping("/funcionario/save")
     public String save(Funcionario funcionario, Model model){
 
-        if (funcionarioService.findByEmail(funcionario.getEmail()) != null) {
-            model.addAttribute("funcionario", funcionario);
-            model.addAttribute("erro", true);
-            model.addAttribute("erroMsg", "O e-mail já foi cadastrado!");
-            return "funcionario/add";
-        }
+//        if (funcionarioService.findByEmail(funcionario.getEmail()) != null) {
+//            model.addAttribute("funcionario", funcionario);
+//            model.addAttribute("erro", true);
+//            model.addAttribute("erroMsg", "O e-mail já foi cadastrado!");
+//            return "funcionario/add";
+//        }
 
         if (funcionarioService.save(funcionario)){
             return "redirect:/funcionario/list";
