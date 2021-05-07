@@ -68,7 +68,7 @@
               </a>
             </td>
             <td class="td-controle">
-              <a th:href="@{/funcionario/delete}" class="btn btn-outline-danger">
+              <a th:onclick="|showModalDeletar('funcionario', ${funcionario.id})|" class="btn btn-outline-danger">
                 <i class="fa fa-trash"></i>
               </a>
             </td>
@@ -77,12 +77,36 @@
       </table>
     </div>
 
-    
+    <!--MODAL DELETAR-->
+    <div class="modal" tabindex="-1" id="modalDeletar">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-header-color">
+                    <h5 class="modal-title">Aviso !</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Você deseja realmente deletar o Funcionário?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                        <i class="fa fa-backspace"></i> Cancelar
+                    </button>
+                    <button type="button" class="btn btn-outline-danger"
+                        th:onclick="deletar()">
+                        <i class="fa fa-trash"></i> Deletar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!--JS-->
     <script th:src="@{/js/jquery-3.6.0.min.js}"></script>
     <script th:src="@{/js/popper.min.js}"></script>
     <script th:src="@{/bootstrap-5.0.0/js/bootstrap.min.js}"></script>
-    
+    <script th:src="@{/js/script.js}"></script>
 
 
 </body>
