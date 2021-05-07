@@ -55,7 +55,6 @@ public class FuncionarioController {
 
     @GetMapping("/funcionario/delete/{id}")
     public String delete(@PathVariable long id){
-
         if (funcionarioService.deleteById(id)){
             return "redirect:/funcionario/list";
         } else {
@@ -63,7 +62,6 @@ public class FuncionarioController {
             //model.addAttribute("funcionario", funcionario);
             return "funcionario/list";
         }
-
     }
 
 }
