@@ -58,7 +58,7 @@ public class FuncionarioController {
         if (funcionarioService.deleteById(id)){
             return "redirect:/funcionario/list";
         } else {
-            //TODO: os alunos farão uma mensagem de erro bem bonita aqui, ok
+            //TODO: os alunos farão a mensagem de erro aqui, ok?
             //model.addAttribute("funcionario", funcionario);
             return "funcionario/list";
         }

@@ -26,10 +26,10 @@
                 <a class="nav-link" aria-current="page" th:href="@{/}">Principal</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" th:href="@{/funcionario/list}">Funcionario</a>
+                <a class="nav-link" th:href="@{/funcionario/list}">Funcionario</a>
               </li>
               <li class="nav-item">
-                 <a class="nav-link" th:href="@{/cargo/list}">Cargo</a>
+                <a class="nav-link active" th:href="@{/cargo/list}">Cargo</a>
               </li>
             </ul>
           </div>
@@ -37,11 +37,11 @@
     </nav>
       
     <div class="container container-header-funcionario">
-      <h3>Funcionários</h3>
+      <h3>Cargo</h3>
     </div>
 
     <div class="container container-btn-novo">
-      <a th:href="@{/funcionario/add}"
+      <a th:href="@{/cargo/add}"
         class="btn btn-outline-dark"> 
           <i class="fa fa-file"></i> Novo
       </a>
@@ -52,26 +52,20 @@
         <thead>
           <tr class="table-dark">
             <th>Código</th>
-            <th>Nome</th>
-            <th>E-mail</th>
-            <th colspan="3">
-              Telefone
-            </th>
+            <th colspan="3">Nome</th>
           </tr>
         </thead>
         <tbody>
-          <tr th:each="funcionario : ${funcionarios}">
-            <td th:text="${funcionario.id}"></td>
-            <td th:text="${funcionario.nome}"></td>
-            <td th:text="${funcionario.email}"></td>
-            <td th:text="${funcionario.telefone}"></td>
+          <tr th:each="cargo : ${cargos}">
+            <td th:text="${cargo.id}"></td>
+            <td th:text="${cargo.nome}"></td>
             <td class="td-controle">
-              <a th:href="@{'/funcionario/edit/' + ${funcionario.id}}" class="btn btn-outline-dark">
+              <a th:href="@{'/cargo/edit/' + ${cargo.id}}" class="btn btn-outline-dark">
                 <i class="far fa-edit"></i>
               </a>
             </td>
             <td class="td-controle">
-              <a th:onclick="|showModalDeletar('funcionario', ${funcionario.id})|" class="btn btn-outline-danger">
+              <a th:onclick="|showModalDeletar('cargo', ${cargo.id})|" class="btn btn-outline-danger">
                 <i class="fa fa-trash"></i>
               </a>
             </td>
@@ -89,7 +83,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Você deseja realmente deletar o Funcionário?</p>
+                    <p>Você deseja realmente deletar o Cargo?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
