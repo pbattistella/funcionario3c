@@ -1,3 +1,7 @@
+:root {
+    --width-cargo: 50%
+}
+
 .container-principal{
     margin-top: 24px;
 }
@@ -21,6 +25,16 @@ li{
     list-style-type: none;
 }
 
+.container-header-cargo{
+    margin-top: 24px;
+    margin-bottom: 24px;
+    padding: 32px;
+    color: #df167b;
+    background-color: #fad1de;
+    border-radius: 15px;
+    text-align: center;
+    width:var(--width-cargo)
+}
 .container-header-funcionario{
     margin-top: 24px;
     margin-bottom: 24px;
@@ -37,6 +51,13 @@ li{
     padding: 16px;
 }
 
+.container-cargo{
+    border: 1px solid #df167b;
+    border-radius: 15px;
+    padding: 16px;
+    width:var(--width-cargo);
+}
+
 .td-controle{
     width: 60px;
 }
@@ -47,11 +68,24 @@ li{
     margin-bottom: 8px;
 }
 
+.container-cargo-btn-novo{
+    width: var(--width-cargo);
+    text-align: right;
+    margin-bottom: 8px;
+}
+
 .container-form-funcionario{
     border: 1px solid #df167b;
     border-radius: 15px;
     padding: 16px;
     width: 60%;
+}
+
+.container-form-cargo{
+    border: 1px solid #df167b;
+    border-radius: 15px;
+    padding: 16px;
+    width: var(--width-cargo);
 }
 
 .btn-form{
@@ -64,3 +98,4 @@ li{
     color: white;
     font-weight: bold;
 }
+
