@@ -38,6 +38,7 @@ public class FuncionarioController {
         String msgErro = funcionarioService.validarFuncionario(funcionario);
         if (msgErro != null) {
             model.addAttribute("funcionario", funcionario);
+            model.addAttribute("cargos", cargoService.findAll());
             model.addAttribute("erro", true);
             model.addAttribute("erroMsg", msgErro);
             if(funcionario.getId() == null) return "funcionario/add";
