@@ -1,5 +1,6 @@
 :root {
     --width-cargo: 50%
+    --width-projeto: 90%
 }
 
 .container-principal{
@@ -23,6 +24,17 @@ ul{
 
 li{
     list-style-type: none;
+}
+
+.container-header-projeto{
+    margin-top: 24px;
+    margin-bottom: 24px;
+    padding: 32px;
+    color: #df167b;
+    background-color: #fad1de;
+    border-radius: 15px;
+    text-align: center;
+    width:var(--width-projeto)
 }
 
 .container-header-cargo{
@@ -72,6 +84,13 @@ li{
     width: var(--width-cargo);
     text-align: right;
     margin-bottom: 8px;
+}
+
+.container-projeto-btn-novo{
+    width: var(--width-projeto);
+    text-align: right;
+    margin-bottom: 8px;
+
 }
 
 .container-form-funcionario{
