@@ -55,20 +55,30 @@
         <thead>
           <tr class="table-dark">
             <th>Código</th>
-            <th colspan="3">Nome</th>
+            <th>Nome</th>
+            <th>Status</th>
+            <th>Risco</th>
+            <th>Orçamento</th>
+            <th>Data Inicial</th>
+            <th colspan="3">Data Final</th>
           </tr>
         </thead>
         <tbody>
-          <tr th:each="cargo : ${cargos}">
-            <td th:text="${cargo.id}"></td>
-            <td th:text="${cargo.nome}"></td>
+          <tr th:each="projeto : ${projetos}">
+            <td th:text="${projeto.id}"></td>
+            <td th:text="${projeto.nome}"></td>
+            <td th:text="${projeto.status}"></td>
+            <td th:text="${projeto.risco}"></td>
+            <td th:text="${'R$ '+ #numbers.formatDecimal(projeto.orcamento, 1, 'DEFAULT', 2,'DEFAULT')}"></td>
+            <td th:text="${#dates.format(projeto.dataInicial, 'dd/MM/yyyy')}"></td>
+            <td th:text="${#dates.format(projeto.dataFinal, 'dd/MM/yyyy')}"></td>
             <td class="td-controle">
-              <a th:href="@{'/cargo/edit/' + ${cargo.id}}" class="btn btn-outline-dark">
+              <a th:href="@{'/projeto/edit/' + ${projeto.id}}" class="btn btn-outline-dark">
                 <i class="far fa-edit"></i>
               </a>
             </td>
             <td class="td-controle">
-              <a th:onclick="|showModalDeletar('cargo', ${cargo.id})|" class="btn btn-outline-danger">
+              <a th:onclick="|showModalDeletar('projeto', ${projeto.id})|" class="btn btn-outline-danger">
                 <i class="fa fa-trash"></i>
               </a>
             </td>
@@ -86,7 +96,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Você deseja realmente deletar o Cargo?</p>
+                    <p>Você deseja realmente deletar o Projeto?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">

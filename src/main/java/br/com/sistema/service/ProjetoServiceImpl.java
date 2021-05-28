@@ -3,6 +3,7 @@ package br.com.sistema.service;
 import br.com.sistema.model.Projeto;
 import br.com.sistema.repository.ProjetoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,7 +15,7 @@ public class ProjetoServiceImpl implements ProjetoService {
 
     @Override
     public List<Projeto> findAll() {
-        return projetoRepository.findAll();
+        return projetoRepository.findAll(Sort.by("nome"));
     }
 
     @Override

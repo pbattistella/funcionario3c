@@ -27,6 +27,12 @@ public class ProjetoController {
         return "projeto/add";
     }
 
+    @GetMapping("/projeto/edit/{id}")
+    public String edit(@PathVariable Long id, Model model){
+        model.addAttribute("projeto", projetoService.findById(id));
+        return "projeto/edit";
+    }
+
     @PostMapping("/projeto/save")
     public String save(Projeto projeto, Model model){
 
@@ -43,6 +49,6 @@ public class ProjetoController {
     @GetMapping("/projeto/delete/{id}")
     public String delete(@PathVariable Long id){
         projetoService.deleteById(id);
-        return "projeto/list";
+        return "redirect:/projeto/list";
     }
 }
