@@ -1,6 +1,9 @@
 package br.com.sistema.controller;
 
+import br.com.sistema.model.Cargo;
 import br.com.sistema.model.Projeto;
+import br.com.sistema.service.CargoServiceImpl;
+import br.com.sistema.service.FuncionarioServiceImpl;
 import br.com.sistema.service.ProjetoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +18,12 @@ public class ProjetoController {
     @Autowired
     ProjetoServiceImpl projetoService;
 
+    @Autowired
+    FuncionarioServiceImpl funcionarioService;
+
+    @Autowired
+    CargoServiceImpl cargoService;
+
     @GetMapping("/projeto/list")
     public String list(Model model){
         model.addAttribute("projetos", projetoService.findAll());
@@ -24,6 +33,10 @@ public class ProjetoController {
     @GetMapping("/projeto/add")
     public String add(Model model){
         model.addAttribute("projeto", new Projeto());
+        Cargo cargo = cargoService.findByNome("Gerente");
+        System.out.println(cargo);
+        System.out.println(funcionarioService.findByCargo(cargo));
+        model.addAttribute("gerentes", funcionarioService.findByCargo(cargo));
         return "projeto/add";
     }
 
