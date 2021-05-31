@@ -34,8 +34,6 @@ public class ProjetoController {
     public String add(Model model){
         model.addAttribute("projeto", new Projeto());
         Cargo cargo = cargoService.findByNome("Gerente");
-        System.out.println(cargo);
-        System.out.println(funcionarioService.findByCargo(cargo));
         model.addAttribute("gerentes", funcionarioService.findByCargo(cargo));
         return "projeto/add";
     }
@@ -43,6 +41,9 @@ public class ProjetoController {
     @GetMapping("/projeto/edit/{id}")
     public String edit(@PathVariable Long id, Model model){
         model.addAttribute("projeto", projetoService.findById(id));
+        Cargo cargo = cargoService.findByNome("Gerente");
+        model.addAttribute("gerentes", funcionarioService.findByCargo(cargo));
+
         return "projeto/edit";
     }
 
