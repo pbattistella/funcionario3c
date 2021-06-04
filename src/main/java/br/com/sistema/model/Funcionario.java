@@ -3,6 +3,7 @@ package br.com.sistema.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Entity(name = "funcionario")
 public class Funcionario {
@@ -26,6 +27,9 @@ public class Funcionario {
     @OneToOne
     @JoinColumn(name = "cargo_id", referencedColumnName = "id")
     private Cargo cargo;
+
+    @ManyToMany(mappedBy = "funcionarios")
+    private List<Projeto> projetos;
 
     public Long getId() {
         return id;
@@ -56,6 +60,12 @@ public class Funcionario {
     }
     public void setCargo(Cargo cargo) {
         this.cargo = cargo;
+    }
+    public List<Projeto> getProjetos() {
+        return projetos;
+    }
+    public void setProjetos(List<Projeto> projetos) {
+        this.projetos = projetos;
     }
 
     @Override

@@ -8,7 +8,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class CargoServiceImpl implements CargoService {
@@ -47,6 +46,11 @@ public class CargoServiceImpl implements CargoService {
             }
         }
         return error;
+    }
+
+    @Override
+    public List<Cargo> findByNomeNot(String nome) {
+        return cargoRepository.findByNomeNot(nome);
     }
 
     @Override

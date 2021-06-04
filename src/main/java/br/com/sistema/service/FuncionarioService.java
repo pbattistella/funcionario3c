@@ -14,6 +14,7 @@ public interface FuncionarioService {
     public String validarFuncionario(Funcionario funcionario);
 
     public List<Funcionario> findByCargo(Cargo cargo);
+    public List<Funcionario> findByCargoIn(Cargo ... cargo);
 
     public boolean save(Funcionario funcionario);
     public boolean deleteById(Long id);
