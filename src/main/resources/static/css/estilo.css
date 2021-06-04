@@ -47,15 +47,15 @@ li{
     text-align: center;
     width:var(--width-cargo)
 }
-.container-header-funcionario{
-    margin-top: 24px;
-    margin-bottom: 24px;
-    padding: 32px;
-    color: #df167b;
-    background-color: #fad1de;
-    border-radius: 15px;
-    text-align: center;
-}
+.container-header-funcionarios{
+     margin-top: 24px;
+     margin-bottom: 24px;
+     padding: 32px;
+     color: #df167b;
+     background-color: #fad1de;
+     border-radius: 15px;
+     text-align: center;
+ }
 
 .container-funcionario{
     border: 1px solid #df167b;
@@ -92,6 +92,17 @@ li{
     margin-bottom: 8px;
 
 }
+
+.container-header-funcionario{
+     margin-top: 24px;
+     margin-bottom: 24px;
+     padding: 32px;
+     color: #df167b;
+     background-color: #fad1de;
+     border-radius: 15px;
+     text-align: center;
+     width:60%;
+ }
 
 .container-form-funcionario{
     border: 1px solid #df167b;
