@@ -131,6 +131,19 @@
               <label for="floatingSelectRisco">Selecione o gerente</label>
           </div>
 
+          <div class="form-floating mb-3">
+              <select class="form-select select-multiple" id="floatingSelectFuncionarios"
+                      aria-label="Selecione um funcionário"
+                      th:field="${projeto.funcionarios}"
+                      multiple>
+                  <option th:each="pf : ${funcionarios}"
+                          th:value="${pf.id}"
+                          th:text="${pf.nome}">
+                  </option>
+              </select>
+              <label for="floatingSelectRisco">Selecione os funcionários</label>
+          </div>
+
           <div class="row">
            <div class="col">
                <a th:href="@{/projeto/list}"

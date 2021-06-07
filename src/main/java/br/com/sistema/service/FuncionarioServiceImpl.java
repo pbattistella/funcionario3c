@@ -83,8 +83,9 @@ public class FuncionarioServiceImpl implements FuncionarioService{
     }
 
     @Override
-    public List<Funcionario> findByCargoIn(Cargo... cargo) {
-        return funcionarioRepository.findByCargoIn(cargo);
+    public List<Funcionario> findByCargoIn(List<Cargo> cargos) {
+
+        return funcionarioRepository.findByCargoIn(cargos);
     }
 
     public boolean deleteById(Long id){

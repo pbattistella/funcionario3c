@@ -38,8 +38,7 @@ public class ProjetoController {
         Cargo cargo = cargoService.findByNome("Gerente");
         List<Cargo> cargos = cargoService.findByNomeNot("Gerente");
         model.addAttribute("gerentes", funcionarioService.findByCargo(cargo));
-        model.addAttribute("funcionarios",funcionarioService.findByCargoIn(cargos))
-
+        model.addAttribute("funcionarios",funcionarioService.findByCargoIn(cargos));
         return "projeto/add";
     }
 
@@ -47,7 +46,9 @@ public class ProjetoController {
     public String edit(@PathVariable Long id, Model model){
         model.addAttribute("projeto", projetoService.findById(id));
         Cargo cargo = cargoService.findByNome("Gerente");
+        List<Cargo> cargos = cargoService.findByNomeNot("Gerente");
         model.addAttribute("gerentes", funcionarioService.findByCargo(cargo));
+        model.addAttribute("funcionarios",funcionarioService.findByCargoIn(cargos));
 
         return "projeto/edit";
     }
